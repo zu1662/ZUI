@@ -14,6 +14,9 @@
   "author": "huazite",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "chokidar": "^3.0.2",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.3",
@@ -43,9 +46,6 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
-    "babel-loader": "^8.0.0-beta.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7"
   }
