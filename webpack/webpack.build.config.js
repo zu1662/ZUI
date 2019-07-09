@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const config = require('../package.json');
 const path = require('path');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,13 +6,13 @@ const webpackBaseConf = require('./webpack.base.config.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 //导入每次删除文件夹的插件
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = merge(webpackBaseConf, {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    zui: './src/zui.js',
+    zui: './src/index.js',
   },
   externals: {
     'vue': {
@@ -33,7 +32,9 @@ module.exports = merge(webpackBaseConf, {
   },
   plugins: [
     //把需要删除的文件目录（路径），以数组方式传入
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['dist']
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].min.css'
     }),

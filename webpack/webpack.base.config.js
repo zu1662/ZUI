@@ -2,12 +2,12 @@
 * @Author: huazite
 * @Date: 2019-07-07 21:04:17  
  * @Last Modified by: huazite
- * @Last Modified time: 2019-07-07 23:47:57
+ * @Last Modified time: 2019-07-10 00:05:19
 * @Description:  webpack【基础配置】，其他配置基于此配置
 */
 
 // 监听文件，生成入口文件
-require('./watcher')
+require('./build/watcher')
 
 const webpack = require('webpack');
 const config = require('../package.json');
@@ -17,22 +17,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const moment = require('moment');
 const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
-// path解析函数
-const resolve = dir => path.join(__dirname, '..', dir)
 
 module.exports = {
   // 统计信息
   stats: {
     entrypoints: false,
     children: false
-  },
-  // 自定义解析路径名
-  resolve: {
-    extensions: ['.js', '.vue', '.json', '.css', '.less'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@src': resolve('src')
-    }
   },
   module: {
     rules: [
