@@ -1,8 +1,9 @@
 <template>
   <div class="demo-app">
     <keep-alive include="index">
-      <router-view class="demo" name="demo"></router-view>
+      <router-view></router-view>
     </keep-alive>
+    <div>hahaahahahahah</div>
   </div>
 </template>
 

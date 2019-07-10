@@ -1,5 +1,7 @@
 module.exports = {
-  root: true,
+  extends: [
+    'plugin:vue/essential'
+  ],
   parserOptions: {
     sourceType: 'module'
   },

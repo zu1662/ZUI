@@ -2,7 +2,7 @@
 * @Author: huazite
 * @Date: 2019-07-07 21:04:17  
  * @Last Modified by: huazite
- * @Last Modified time: 2019-07-10 00:05:19
+ * @Last Modified time: 2019-07-10 23:18:34
 * @Description:  webpack【基础配置】，其他配置基于此配置
 */
 
@@ -59,7 +59,8 @@ module.exports = {
         enforce: 'pre',
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: [path.resolve(__dirname, 'src')],
       },
       {
         test: /\.js$/,
