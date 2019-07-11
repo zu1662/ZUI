@@ -11,6 +11,11 @@ const webpackBaseConf = require('./webpack.base.config.js');
 //  创建一个在内存中生成html的插件
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// 优化控制台输出
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const notifier = require('node-notifier');
+// 获取局域网IP
+const ip = require('ip').address();
 const merge = require('webpack-merge');
 
 module.exports = merge(webpackBaseConf, {
@@ -45,8 +50,33 @@ module.exports = merge(webpackBaseConf, {
     compress: true, // 一切服务都启用 gzip 压缩
     historyApiFallback: true,
     disableHostCheck: true, // 绕过主机检查
+    quiet: true, // 设置控制台不输出
   },
   plugins: [
+    new FriendlyErrorsWebpackPlugin({
+      // 运行成功
+      compilationSuccessInfo:{
+        messages:[`你的应用程序在这里运行：http://${ip}:${this.port}`],
+        notes:['有些附加说明要在成功编辑时显示']
+      },
+      //  运行错误
+      onErrors:function(severity,errors){
+        // 严重性可以是'error'或'warning'
+        if (severity !== 'error') {
+          return;
+        }
+        const error = errors[0];
+        notifier.notify({
+          title: "Webpack error",
+          message: severity + ': ' + error.name,
+          subtitle: error.file || '',
+          // icon: ICON
+        });
+      },
+      //是否每次编译之间清除控制台
+      //默认为true
+      clearConsole:true,
+    }),
     new HtmlWebpackPlugin({ //  创建一个在内存中生成html的插件
       chunks: ['zui-docs'],
       inject: true,
