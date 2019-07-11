@@ -70,6 +70,11 @@ module.exports = {
         }
       },
       {
+        test: /\.md$/,
+        exclude: /node_modules/,
+        use:['vue-loader','markdown-loader']
+      },
+      {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         options: {
