@@ -2,7 +2,7 @@
 * @Author: huazite
 * @Date: 2019-07-07 21:03:46  
  * @Last Modified by: huazite
- * @Last Modified time: 2019-07-10 22:08:17
+ * @Last Modified time: 2019-07-16 21:59:36
 * @Description:  页面开发配置
 */
 
@@ -39,7 +39,7 @@ module.exports = merge(webpackBaseConf, {
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.less'],
     alias: {
-      'imgs': path.resolve('./docs/assets/imgs'),
+      '@assets': path.resolve(__dirname, '../docs/assets'),
     }
   },
   devtool: 'cheap-module-eval-source-map',

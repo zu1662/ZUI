@@ -9,17 +9,16 @@ packages.map(item => {
   const pkgName =  item.name.toLowerCase();
   if(isMobile) {
     routes.push({
-      path: '/' + item.name,
-      components: () => import('../src/packages/' + pkgName + '/demo/index.vue'),
+      path: '/' + pkgName,
+      component: () => import('../src/packages/' + pkgName + '/demo/index.vue'),
       name: item.name
     });
   }else {
     routes.push({
-      path: '/' + item.name,
-      components: () => import('../src/packages/' + pkgName + 'README.md'),
+      path: '/' + pkgName,
+      component: () => import('../src/packages/' + pkgName + '/README.md'),
       name: item.name
     });
   }
 })
-
 export default routes

@@ -5,7 +5,7 @@ import App from './App.vue'
 
 // 阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
-
+Vue.use(VueRouter)
 const router = new VueRouter({
   routes
 });

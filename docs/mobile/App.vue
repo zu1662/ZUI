@@ -3,7 +3,6 @@
     <keep-alive include="index">
       <router-view></router-view>
     </keep-alive>
-    <div>aaaaaaaaaaaaaaaa</div>
   </div>
 </template>
 

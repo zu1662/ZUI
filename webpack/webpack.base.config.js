@@ -2,7 +2,7 @@
 * @Author: huazite
 * @Date: 2019-07-07 21:04:17  
  * @Last Modified by: huazite
- * @Last Modified time: 2019-07-10 23:18:34
+ * @Last Modified time: 2019-07-16 23:00:39
 * @Description:  webpack【基础配置】，其他配置基于此配置
 */
 
@@ -15,7 +15,6 @@ const config = require('../package.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const moment = require('moment');
-const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
 
 module.exports = {
@@ -29,15 +28,15 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/, // sass文件处理
         use: [{
-          loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader // 将 JS 字符串生成为 style 节点
+          loader: 'style-loader' // 将 JS 字符串生成为 style 节点
         }, {
           loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
         }, {
-          loader: "'postcss-loader'" // JS 插件转换样式的工具，可以添加浏览器前缀，支持 CSS Variables 和 Mixins等其他的功能
+          loader: "postcss-loader" // JS 插件转换样式的工具，可以添加浏览器前缀，支持 CSS Variables 和 Mixins等其他的功能
         }, {
           loader: "sass-loader", // 将 Sass 编译成 CSS
           options: {
-            data: `@import "./src/styles/index.scss"; `, // 会把此段代码添加在sass文件的最前面
+            // data: `@import "./src/styles/index.scss"; `, // 会把此段代码添加在sass文件的最前面
           },
         }]
       },
@@ -46,12 +45,6 @@ module.exports = {
         use: [
           {
             loader: 'vue-loader',
-            options: {
-              loaders: {
-                sass: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader']
-              }
-
-            }
           }
         ]
       },
@@ -72,7 +65,7 @@ module.exports = {
       {
         test: /\.md$/,
         exclude: /node_modules/,
-        use:['vue-loader','markdown-loader']
+        use:['vue-loader','@vant/markdown-loader']
       },
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
