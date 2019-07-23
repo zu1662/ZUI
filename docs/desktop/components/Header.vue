@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <img src="@assets/logo.png" alt="">
+      <img src="@/docs/assets/logo.png" alt="">
       <span>Zui</span>
     </div>
     <div class="info">

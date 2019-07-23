@@ -1,3 +1,11 @@
+/*
+* @Author: huazite
+* @Date: 2019-07-23 23:14:12  
+* @Last Modified by: huazite
+* @Last Modified time: 2019-07-23 23:14:12
+* @Description:  组件build配置
+*/
+
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');

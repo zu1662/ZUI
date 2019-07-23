@@ -1,11 +1,12 @@
 <template>
-  <div class="demo-app">
+  <div class="desktop-app">
     <Header/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import '@/src/styles/index.scss'
 import Header from './components/Header'
 export default {
   name: 'App',
@@ -15,5 +16,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.desktop-app {
+  min-width: 1000px;
+}
 </style>

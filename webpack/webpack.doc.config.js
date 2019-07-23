@@ -1,9 +1,9 @@
 /*
 * @Author: huazite
-* @Date: 2019-07-07 21:03:04  
- * @Last Modified by: huazite
- * @Last Modified time: 2019-07-10 00:21:18
-* @Description:  页面【发布配置】
+* @Date: 2019-07-23 23:08:40  
+* @Last Modified by: huazite
+* @Last Modified time: 2019-07-23 23:08:40
+* @Description:  文档生成配置
 */
 
 const webpack = require('webpack');

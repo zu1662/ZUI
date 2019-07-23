@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "debug": "node --nolazy --inspect-brk=9229  ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --watch --config webpack/webpack.dev.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.config.js",
     "build:site": "cross-env NODE_ENV=production webpack --config webpack/webpack.doc.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack  --config webpack/webpack.build.config.js"
@@ -30,12 +31,12 @@
     "eslint-loader": "^2.2.1",
     "eslint-plugin-vue": "^5.2.3",
     "file-loader": "^4.0.0",
-    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "ip": "^1.1.5",
     "json-templater": "^1.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "moment": "^2.24.0",
+    "nice-errors-webpack-plugin": "^1.0.3",
     "node-notifier": "^5.4.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",

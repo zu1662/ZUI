@@ -1,9 +1,9 @@
 /*
 * @Author: huazite
-* @Date: 2019-07-07 21:03:46  
- * @Last Modified by: huazite
- * @Last Modified time: 2019-07-16 21:59:36
-* @Description:  页面开发配置
+* @Date: 2019-07-23 23:13:44  
+* @Last Modified by: huazite
+* @Last Modified time: 2019-07-23 23:13:44
+* @Description:  开发配置
 */
 
 const path = require('path');
@@ -12,10 +12,8 @@ const webpackBaseConf = require('./webpack.base.config.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 优化控制台输出
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const NiceErrorsWebpackPlugin = require('nice-errors-webpack-plugin');
 const notifier = require('node-notifier');
-// 获取局域网IP
-const ip = require('ip').address();
 const merge = require('webpack-merge');
 
 module.exports = merge(webpackBaseConf, {
@@ -39,7 +37,7 @@ module.exports = merge(webpackBaseConf, {
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.less'],
     alias: {
-      '@assets': path.resolve(__dirname, '../docs/assets'),
+      '@': path.resolve(__dirname, '../'),
     }
   },
   devtool: 'cheap-module-eval-source-map',
@@ -53,10 +51,9 @@ module.exports = merge(webpackBaseConf, {
     quiet: true, // 设置控制台不输出
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin({
+    new NiceErrorsWebpackPlugin({
       // 运行成功
       compilationSuccessInfo:{
-        messages:[`你的应用程序在这里运行：http://${ip}:${this.port}`],
         notes:['有些附加说明要在成功编辑时显示']
       },
       //  运行错误
