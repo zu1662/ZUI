@@ -1,20 +1,20 @@
 /*
 * @Author: huazite
-* @Date: 2019-07-23 23:08:40  
-* @Last Modified by: huazite
-* @Last Modified time: 2019-07-23 23:08:40
+* @Date: 2019-07-23 23:08:40
+ * @Last Modified by: zu1662
+ * @Last Modified time: 2019-07-24 22:21:55
 * @Description:  文档生成配置
 */
 
-const webpack = require('webpack');
-const baseConf = require('./webpack.base.config.js');
-const merge = require('webpack-merge');
-const path = require('path');
+const webpack = require('webpack')
+const baseConf = require('./webpack.base.config.js')
+const merge = require('webpack-merge')
+const path = require('path')
 // js压缩插件
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // 用于优化或者压缩CSS资源
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-//导入每次删除文件夹的插件
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// 导入每次删除文件夹的插件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = merge(baseConf, {
@@ -26,10 +26,10 @@ module.exports = merge(baseConf, {
   },
   devtool: 'cheap-module-source-map',
   plugins: [
-    //把需要删除的文件目录（路径），以数组方式传入
+    // 把需要删除的文件目录（路径），以数组方式传入
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['../docs/dist']
-    }),
+    })
   ],
   optimization: {
     minimizer: [
@@ -44,5 +44,5 @@ module.exports = merge(baseConf, {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  },
-});
+  }
+})

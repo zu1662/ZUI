@@ -1,29 +1,29 @@
 /*
 * @Author: huazite
-* @Date: 2019-07-23 23:14:12  
-* @Last Modified by: huazite
-* @Last Modified time: 2019-07-23 23:14:12
+* @Date: 2019-07-23 23:14:12
+ * @Last Modified by: zu1662
+ * @Last Modified time: 2019-07-24 22:21:37
 * @Description:  组件build配置
 */
 
-const webpack = require('webpack');
-const path = require('path');
-const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpackBaseConf = require('./webpack.base.config.js');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-//导入每次删除文件夹的插件
+const webpack = require('webpack')
+const path = require('path')
+const merge = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpackBaseConf = require('./webpack.base.config.js')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// 导入每次删除文件夹的插件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = merge(webpackBaseConf, {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    zui: './src/index.js',
+    zui: './src/index.js'
   },
   externals: {
-    'vue': {
+    vue: {
       root: 'Vue',
       commonjs: 'vue',
       commonjs2: 'vue',
@@ -39,7 +39,7 @@ module.exports = merge(webpackBaseConf, {
     umdNamedDefine: true
   },
   plugins: [
-    //把需要删除的文件目录（路径），以数组方式传入
+    // 把需要删除的文件目录（路径），以数组方式传入
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['dist']
     }),
@@ -65,5 +65,5 @@ module.exports = merge(webpackBaseConf, {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  },
-});
+  }
+})

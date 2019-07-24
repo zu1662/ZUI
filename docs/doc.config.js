@@ -1,12 +1,13 @@
-import pkgJson from '../package.json';
+import pkgJson from '../package.json'
 
-const { version } = pkgJson;
+const { version } = pkgJson
 
 const github = ''
 
 const packageType = [
   '基础组件'
 ]
+
 const packages = [
   {
     name: 'Button',
@@ -21,4 +22,4 @@ export {
   github,
   packages,
   packageType
-};
+}
