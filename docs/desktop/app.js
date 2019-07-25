@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 Vue.use(VueRouter)
 const router = new VueRouter({
-  routes: getRoutes({mobile: true}),
+  routes: getRoutes({mobile: false}),
   scrollBehavior(to, from, savedPosition) {
     return savedPosition || { x: 0, y: 0 };
   }
