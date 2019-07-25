@@ -4,22 +4,43 @@ const { version } = pkgJson
 
 const github = ''
 
-const packageType = [
-  '基础组件'
-]
-
-const packages = [
+const navigation = [
   {
-    name: 'Button',
-    cnName: '按钮',
-    type: 0,
-    hasPath: true
+    name: '开发指南',
+    groups: [
+      {
+        list: [
+          {
+            name: 'Intro',
+            title: '介绍',
+          },
+        ]
+      }
+    ]
+  },
+  {
+    name: '组件',
+    showInMobile: true,
+    groups: [
+      {
+        groupName: '基础组件',
+        list: [
+          {
+            name: 'Button',
+            title: 'Button 按钮',
+          },
+          {
+            name: 'Cell',
+            title: 'Cell 单元格'
+          },
+        ]
+      }
+    ],
   }
 ]
 
 export {
   version,
   github,
-  packages,
-  packageType
+  navigation
 }
