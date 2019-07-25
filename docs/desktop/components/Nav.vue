@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { packages, packageType } from '@/docs/doc.config.js'
+import { navigation } from '@/docs/doc.config.js'
 export default {
   name: 'Nav',
   data() {
