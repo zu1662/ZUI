@@ -12,8 +12,8 @@ const navigation = [
         list: [
           {
             name: 'Intro',
-            title: '介绍',
-          },
+            title: '介绍'
+          }
         ]
       }
     ]
@@ -27,15 +27,15 @@ const navigation = [
         list: [
           {
             name: 'Button',
-            title: 'Button 按钮',
+            title: 'Button 按钮'
           },
           {
             name: 'Cell',
             title: 'Cell 单元格'
-          },
+          }
         ]
       }
-    ],
+    ]
   }
 ]
 

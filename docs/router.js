@@ -1,23 +1,25 @@
 import { navigation } from './doc.config.js'
 
 // 根据不同环境设置routes
-function getRoutes(options) {
+function getRoutes (options) {
   const isMobile = options.mobile
   const routes = []
+  // 循环config信息，设置路由
   navigation.map(category => {
-    let groups = category.groups
-    if(category.showInMobile) {
+    const groups = category.groups
+    if (category.showInMobile) {
       groups.map(group => {
-        let lists = group.list
+        const lists = group.list
         lists.map(list => {
           const pkgName = list.name.toLowerCase()
-          if(isMobile) {
+          // 如果是mobile，则展示demo页面。否则展示readme文件
+          if (isMobile) {
             routes.push({
               path: '/' + pkgName,
               component: () => import(`../src/packages/${pkgName}/demo/index.vue`),
               name: list.name
             })
-          }else {
+          } else {
             routes.push({
               path: '/' + pkgName,
               component: () => import(`../src/packages/${pkgName}/README.md`),
@@ -26,10 +28,10 @@ function getRoutes(options) {
           }
         })
       })
-    }else {
+    } else {
       if (!isMobile) {
         groups.map(group => {
-          let lists = group.list
+          const lists = group.list
           lists.map(list => {
             const pkgName = list.name.toLowerCase()
             routes.push({

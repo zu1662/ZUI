@@ -5,16 +5,16 @@ import App from './App.vue'
 
 // 阻止 vue 在启动时生成生产提示
 if (process.env.NODE_ENV !== 'production') {
-  Vue.config.productionTip = false;
+  Vue.config.productionTip = false
 }
 
 Vue.use(VueRouter)
 const router = new VueRouter({
-  routes: getRoutes({mobile: true}),
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { x: 0, y: 0 };
+  routes: getRoutes({ mobile: true }),
+  scrollBehavior (to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
   }
-});
+})
 
 window.VueRouter = router
 

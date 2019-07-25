@@ -8,7 +8,7 @@
   },
   "scripts": {
     "debug": "node --nolazy --inspect-brk=9229  ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --watch --config webpack/webpack.dev.config.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack/webpack.dev.config.js",
     "build:site": "cross-env NODE_ENV=production webpack --config webpack/webpack.doc.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack  --config webpack/webpack.build.config.js"
   },
