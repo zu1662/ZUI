@@ -36,6 +36,7 @@ module.exports = {
           "node": true
       },
   },
+  "eslint.enable": false
 }
 */
 // npm install -g
