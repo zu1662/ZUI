@@ -4,6 +4,14 @@ import { navigation } from './doc.config.js'
 function getRoutes (options) {
   const isMobile = options.mobile
   const routes = []
+  // 设置移动端home路由
+  if (isMobile) {
+    routes.push({
+      path: '/',
+      component: () => import(`../docs/mobile/components/MobileHome.vue`),
+      name: 'MobileHome'
+    })
+  }
   // 循环config信息，设置路由
   navigation.map(category => {
     const groups = category.groups
@@ -38,6 +46,19 @@ function getRoutes (options) {
               path: '/' + pkgName,
               component: () => import(`../docs/markdown/` + pkgName + `.md`),
               name: list.name
+            })
+          })
+        })
+      } else {
+        groups.map(group => {
+          const lists = group.list
+          lists.map(list => {
+            const pkgName = list.name.toLowerCase()
+            routes.push({
+              path: '/' + pkgName,
+              redirect: {
+                name: 'MobileHome'
+              }
             })
           })
         })

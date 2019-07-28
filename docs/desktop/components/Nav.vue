@@ -40,15 +40,39 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+/*修改滚动条样式*/
+div::-webkit-scrollbar{
+  width:5px;
+  height:10px;
+}
+// 滚动条底部样式
+div::-webkit-scrollbar-track{
+  background-color: #fff;
+  border-radius:2px;
+}
+// 滚动条滑动块样式
+div::-webkit-scrollbar-thumb{
+  background: #fff;
+  border-radius:10px;
+}
+// 滑动快hover样式
+div::-webkit-scrollbar-thumb:hover{
+  background: #ccc;
+}
 .nav {
+  padding: 30px 0;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 200px;
+  width: 220px;
   overflow-y: scroll;
   background-color: #fff;
-  box-shadow: 2px 0 10px rgba(1,1,1,.1);
-
+  &:hover {
+    &::-webkit-scrollbar-thumb{
+      background: #ddd;
+      border-radius:10px;
+    }
+  }
   .nav-category {
     h1.category {
       padding: 10px 10px 10px 30px;
