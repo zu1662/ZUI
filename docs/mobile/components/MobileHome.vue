@@ -5,9 +5,9 @@
       v-for="(group, index) in navs.groups"
       :key="index"
     >
-      <h1 @click="setListToggle">
+      <h1 @click.self="setListToggle">
         <span class="group-title">{{group.groupName}}</span>
-        <mobile-icon name="share"></mobile-icon>
+        <mobile-icon :name="group.groupName === '基础组件'? 'dashboard': ''" :size="20" style="color: #666;"></mobile-icon>
       </h1>
       <div class="list-wrapper" isShow="false" style="display: none;">
         <div
@@ -16,7 +16,7 @@
           :key="index"
         >
           <h2>{{list.title}}</h2>
-          <mobile-icon name="share"></mobile-icon>
+          <mobile-icon name="arrow_right" :size="20" style="color: #666;"></mobile-icon>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 2rem;
+      font-size: 1.6rem;
       border-bottom: 0.1rem solid #f5f5f5;
       user-select: none;
       &:active {
@@ -79,6 +79,9 @@ export default {
         align-items: center;
         justify-content: space-between;
         border-bottom: 0.1rem solid #f5f5f5;
+        h2 {
+          font-size: 1.4rem;
+        }
       }
     }
   }
