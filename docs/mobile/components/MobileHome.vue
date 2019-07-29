@@ -7,13 +7,14 @@
     >
       <h1 @click.self="setListToggle">
         <span class="group-title">{{group.groupName}}</span>
-        <mobile-icon :name="group.groupName === '基础组件'? 'dashboard': ''" :size="20" style="color: #666;"></mobile-icon>
+        <mobile-icon :name="group.groupIcon" :size="20" style="color: #666;"></mobile-icon>
       </h1>
       <div class="list-wrapper" isShow="false" style="display: none;">
         <div
           class="list"
           v-for="(list, index) in group.list"
           :key="index"
+          @click="() => { $router.push({name: list.name}) }"
         >
           <h2>{{list.title}}</h2>
           <mobile-icon name="arrow_right" :size="20" style="color: #666;"></mobile-icon>

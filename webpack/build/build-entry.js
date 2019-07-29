@@ -27,11 +27,11 @@ const MAIN_TEMPLATE = `
 
 const components = [
 {{install}},
-];
+]
 
 const install = function(Vue, opts = {}) {
   components.forEach(component => {
-    Vue.component(component.name, component);
+    Vue.component(component.name, component)
   });
 
   // Vue.use(InfiniteScroll);
@@ -47,14 +47,14 @@ const install = function(Vue, opts = {}) {
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+  install(window.Vue)
 }
 
 export default {
   version: '{{version}}',
   install,
 {{list}}
-};
+}
 `
 
 // 文件生成函数
@@ -88,6 +88,8 @@ function updateSrcEntry () {
 
   fs.writeFileSync(OUTPUT_PATH, template)
 }
+
+updateSrcEntry()
 
 module.exports = {
   updateSrcEntry

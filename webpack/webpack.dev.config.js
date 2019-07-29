@@ -1,10 +1,10 @@
 /*
-* @Author: huazite
-* @Date: 2019-07-23 23:13:44
- * @Last Modified by: zu1662
- * @Last Modified time: 2019-07-24 22:20:36
-* @Description:  开发配置
-*/
+ * @Author: zu1662
+ * @Date: 2019-07-23 01:00:47
+ * @LastEditTime: 2019-07-29 22:37:30
+ * @LastEditor: zu1662
+ * @Description: 开发配置
+ */
 
 const path = require('path')
 const webpackBaseConf = require('./webpack.base.config.js')
@@ -42,9 +42,9 @@ module.exports = merge(webpackBaseConf, {
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: { // 在命令行 使用 --hot 启用热更新
-    // host: '0.0.0.0', // 指定使用的host
+    host: '0.0.0.0', // 指定使用的host
     // port: 8080, //设置运行端口
-    open: true, // 自动打开浏览器
+    // open: true, // 自动打开浏览器
     compress: true, // 一切服务都启用 gzip 压缩
     historyApiFallback: true,
     disableHostCheck: true, // 绕过主机检查
@@ -89,7 +89,7 @@ module.exports = merge(webpackBaseConf, {
       chunks: ['zui-mobile'],
       inject: true,
       template: './docs/mobile/index.html',
-      filename: 'demo.html',
+      filename: 'mobile.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

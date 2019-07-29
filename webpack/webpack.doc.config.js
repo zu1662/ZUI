@@ -1,10 +1,10 @@
 /*
-* @Author: huazite
-* @Date: 2019-07-23 23:08:40
- * @Last Modified by: zu1662
- * @Last Modified time: 2019-07-24 22:21:55
-* @Description:  文档生成配置
-*/
+ * @Author: zu1662
+ * @Date: 2019-07-23 01:00:47
+ * @LastEditTime: 2019-07-29 22:25:37
+ * @LastEditor: zu1662
+ * @Description: 文档生成配置
+ */
 
 const webpack = require('webpack')
 const baseConf = require('./webpack.base.config.js')

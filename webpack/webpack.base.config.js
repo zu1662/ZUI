@@ -1,13 +1,14 @@
 /*
-* @Author: huazite
-* @Date: 2019-07-23 23:09:14
- * @Last Modified by: zu1662
- * @Last Modified time: 2019-07-24 22:24:03
-* @Description:  webpack【基础配置】，其他配置基于此配置
-*/
+ * @Author: zu1662
+ * @Date: 2019-07-23 01:00:47
+ * @LastEditTime: 2019-07-29 23:16:20
+ * @LastEditor: zu1662
+ * @Description: webpack【基础配置】，其他配置基于此配置
+ */
 
-// 监听文件，生成入口文件
-require('./build/watcher')
+// 生成入口文件
+// 改为通过脚本生成入口文件。见package.json
+// require('./build/watcher')
 
 const webpack = require('webpack')
 const config = require('../package.json')

@@ -7,7 +7,7 @@
         <router-view></router-view>
       </div>
       <div class="zui-iframe-box">
-        <iframe src="/demo.html#/" scrolling="no" frameborder="0" style="width: 320px;height: 600px;"></iframe>
+        <iframe src="/mobile.html#/" scrolling="no" frameborder="0" style="width: 320px;height: 600px;"></iframe>
       </div>
     </div>
   </div>

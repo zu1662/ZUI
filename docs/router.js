@@ -1,17 +1,23 @@
+/*
+ * @Author: zu1662
+ * @Date: 2019-07-23 01:00:47
+ * @LastEditTime: 2019-07-29 23:11:36
+ * @LastEditor: zu1662
+ * @Description: 根据 doc.config 生成routes
+ */
+
+import './utils/syncRoute'
 import { navigation } from './doc.config.js'
 
 // 根据不同环境设置routes
 function getRoutes (options) {
   const isMobile = options.mobile
   const routes = []
-  // 设置移动端home路由
-  if (isMobile) {
-    routes.push({
-      path: '/',
-      component: () => import(`../docs/mobile/components/MobileHome.vue`),
-      name: 'MobileHome'
-    })
-  }
+  // 设置首页路由
+  routes.push({
+    path: '/',
+    redirect: '/intro'
+  })
   // 循环config信息，设置路由
   navigation.map(category => {
     const groups = category.groups
@@ -56,9 +62,8 @@ function getRoutes (options) {
             const pkgName = list.name.toLowerCase()
             routes.push({
               path: '/' + pkgName,
-              redirect: {
-                name: 'MobileHome'
-              }
+              component: () => import(`../docs/mobile/components/MobileHome.vue`),
+              name: list.name
             })
           })
         })

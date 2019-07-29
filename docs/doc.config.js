@@ -24,6 +24,7 @@ const navigation = [
     groups: [
       {
         groupName: '基础组件',
+        groupIcon: 'dashboard',
         list: [
           {
             name: 'Button',

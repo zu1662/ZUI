@@ -15,6 +15,7 @@
         <div class="nav-list">
           <a
             class="list"
+            :class="{active: nowPathName === list.name}"
             v-for="(list, k) in group.list"
             :key="k"
             @click.stop="()=> { $router.push({ name: list.name }) }"
@@ -34,7 +35,13 @@ export default {
   name: 'Nav',
   data () {
     return {
-      navs: navigation
+      navs: navigation,
+      nowPathName: ''
+    }
+  },
+  watch: {
+    $route (to, from) {
+      this.nowPathName = to.name
     }
   }
 }
@@ -94,6 +101,9 @@ div::-webkit-scrollbar-thumb:hover{
       color: #555;
       font-size: 16px;
       &:hover {
+        color: #1989fa;
+      }
+      &.active {
         color: #1989fa;
       }
     }
