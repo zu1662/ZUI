@@ -37,6 +37,7 @@ export default {
     }
   },
   methods: {
+    // 列表显示隐藏
     setListToggle (e) {
       const listWrapper = e.target.nextElementSibling
       const listWrapperShow = listWrapper.getAttribute('isShow')

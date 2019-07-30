@@ -13,6 +13,10 @@ const navigation = [
           {
             name: 'Intro',
             title: '介绍'
+          },
+          {
+            name: 'Color',
+            title: '色彩'
           }
         ]
       }

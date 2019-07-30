@@ -1,3 +1,70 @@
+@import '@/src/styles/common/var.scss';
+// 文档DOM自定义样式
+.zui-color-flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .color-item {
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 180px;
+    height: 60px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: $font-size-small;
+
+    &.primary {
+      background-color: $primary-color;
+    }
+    &.success {
+      background-color: $success-color;
+    }
+    &.warning {
+      background-color: $warning-color;
+    }
+    &.danger {
+      background-color: $danger-color;
+    }
+    &.info {
+      background-color: $info-color;
+    }
+    &.title {
+      background-color: $title-color;
+    }
+    &.content {
+      background-color: $content-color;
+    }
+    &.subsidiary {
+      background-color: $subsidiary-color;
+    }
+    &.disabled {
+      background-color: $disabled-color;
+      color: $content-color;
+    }
+    &.border {
+      background-color: $border-color;
+      color: $content-color;
+    }
+    &.divider {
+      background-color: $divider-color;
+      color: $content-color;
+    }
+    &.background {
+      background-color: $background-color;
+      color: $content-color;
+    }
+
+    .color-title {
+      margin-bottom: 5px;
+      font-size: $font-size-normal;
+    }
+  }
+}
+
 .zui-doc {
   .card {
     padding: 24px;

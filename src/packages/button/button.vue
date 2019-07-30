@@ -1,5 +1,5 @@
 <template>
-  <div>button</div>
+  <button class="zui-button"></button>
 </template>
 <script>
 export default {
