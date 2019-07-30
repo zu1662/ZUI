@@ -14,6 +14,7 @@
 </template>
 <script>
 import '@/src/styles/index.scss'
+import '@/docs/assets/css/custom-md.scss'
 import '@/docs/assets/css/md-styles.scss'
 import 'highlight.js/styles/github.css'
 import Header from './components/Header'
@@ -26,7 +27,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
   .desktop-app {
     height: 100%;
