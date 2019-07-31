@@ -35,8 +35,8 @@ const navigation = [
             title: 'Button 按钮'
           },
           {
-            name: 'Cell',
-            title: 'Cell 单元格'
+            name: 'Icon',
+            title: 'Icon 图标'
           }
         ]
       }

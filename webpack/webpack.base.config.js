@@ -1,7 +1,7 @@
 /*
  * @Author: zu1662
  * @Date: 2019-07-23 01:00:47
- * @LastEditTime: 2019-07-29 23:16:20
+ * @LastEditTime: 2019-07-31 22:24:09
  * @LastEditor: zu1662
  * @Description: webpack【基础配置】，其他配置基于此配置
  */
@@ -37,7 +37,7 @@ module.exports = {
         }, {
           loader: 'sass-loader', // 将 Sass 编译成 CSS
           options: {
-            // data: `@import "./src/styles/index.scss"; `, // 会把此段代码添加在sass文件的最前面
+            data: `@import "./src/styles/index.scss"; ` // 会把此段代码添加在sass文件的最前面
           }
         }]
       },
