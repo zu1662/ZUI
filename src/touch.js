@@ -14,11 +14,12 @@ let touch = {
      * @param  triggerOnMove       swipe事件有两种触发方式，一种是在touchmove过程中，只要满足滑动距离条件即触发。
      *                             一种是在touchend中，进入滑动距离判断，如果满足滑动距离触发。
      *                             默认是在touchend中触发。
-		 * @param  moving 						 是否触发移动事件。为 true 时，滑动时不断触发回调事件
-		 * @param  return  						 通过 binding.value 的回调，传入 当前滑动方向（swipeLeft, swipeRight, swipeUp, swipeDown）以及滑动事件 event
+     * @param  moving 		   是否触发移动事件。为 true 时，滑动时不断触发回调事件
+     *@callback  binding.value('swipeLeft', e)     
+     * 		                   通过 binding.value 的回调，传入 当前滑动方向（swipeLeft, swipeRight, swipeUp, swipeDown）以及滑动事件 event
      */
-		let distance = binding.arg.distance || vueTouch.distance
-		let duration = binding.arg.distance || vueTouch.duration
+    let distance = binding.arg.distance || vueTouch.distance
+    let duration = binding.arg.distance || vueTouch.duration
     let triggerOnMove = binding.arg.triggerOnMove;
     let moving = binding.arg.moving;
     let isStopPropagation = binding.arg.isStopPropagation;
@@ -72,19 +73,19 @@ let touch = {
           return false;
         }
 
-				if (triggerOnMove) {
-					// 判断此时的滑动方向
-					let nowDirection = swipeDirection(
-						startPoint.x,
-						startPoint.y,
-						endPoint.x,
-						endPoint.y
-					);
-					if (nowDirection) {
-						binding.value(nowDirection, e);
-						clearSwipe();
-					}
-				}
+	if (triggerOnMove) {
+		// 判断此时的滑动方向
+		let nowDirection = swipeDirection(
+			startPoint.x,
+			startPoint.y,
+			endPoint.x,
+			endPoint.y
+		);
+		if (nowDirection) {
+			binding.value(nowDirection, e);
+			clearSwipe();
+		}
+	}
       }
     });
 
@@ -101,17 +102,17 @@ let touch = {
       if (startPoint) {
 
         if (endPoint && !triggerOnMove) {
-					// 判断此时的滑动方向
-					let nowDirection = swipeDirection(
-						startPoint.x,
-						startPoint.y,
-						endPoint.x,
-						endPoint.y
-					);
-					if (nowDirection) {
-						binding.value(nowDirection, e);
-					}
-				}
+		// 判断此时的滑动方向
+		let nowDirection = swipeDirection(
+			startPoint.x,
+			startPoint.y,
+			endPoint.x,
+			endPoint.y
+		);
+		if (nowDirection) {
+			binding.value(nowDirection, e);
+		}
+	}
       }
       //清除本次touch数据
       clearSwipe();
