@@ -1,10 +1,3 @@
-<!--
- * @Author: zu1662
- * @LastEditor: zu1662
- * @Date: 2019-07-31 22:10:33
- * @LastEditTime: 2019-08-08 23:05:48
- * @Description:  图标示例
- -->
 <template>
   <div class="icon-demo">
     <div class="tab-title">
@@ -104,7 +97,7 @@ export default {
     }
     span {
       color: #999;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-size: 1.2rem;
       line-height: 1;
       margin: 1rem 0;

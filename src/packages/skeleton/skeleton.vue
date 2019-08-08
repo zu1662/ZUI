@@ -1,32 +1,32 @@
 <template>
-    <section class="skeleton">
-      <div class="skeleton-animation"></div>
-      <div class="main">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <svg width="100%"
-              height="66px"
-              viewBox="0 0 270 66"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g id="Page-1"
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-            <path d="M8,60 C8,60 34.2387828,14.9219741 64.061311,29.9479827 C93.8838393,44.9739914 92.5237985,60 121.841658,60 C151.159517,60 156.602778,15.1784686 187.906761,7.58013697 C219.210745,-0.0181946978 244.968768,21.4348856 263,36.8297359"
-              id="Path-2"
-              stroke="#F0F0F0"
-              stroke-width="10"
-            ></path>
-          </g>
-        </svg>
-      </div>
-    </section>
+  <section class="skeleton">
+    <div class="skeleton-animation"></div>
+    <div class="main">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <svg width="100%"
+            height="66px"
+            viewBox="0 0 270 66"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+          <path d="M8,60 C8,60 34.2387828,14.9219741 64.061311,29.9479827 C93.8838393,44.9739914 92.5237985,60 121.841658,60 C151.159517,60 156.602778,15.1784686 187.906761,7.58013697 C219.210745,-0.0181946978 244.968768,21.4348856 263,36.8297359"
+            id="Path-2"
+            stroke="#F0F0F0"
+            stroke-width="10"
+          ></path>
+        </g>
+      </svg>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -77,7 +77,7 @@ export default {
     div.item:first-child {
       margin-left: 2rem;
       width: 4rem;
-      
+
       &::before {
         content: '';
         position: absolute;
