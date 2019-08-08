@@ -1,7 +1,7 @@
 /*
  * @Author: zu1662
  * @Date: 2019-07-23 01:00:47
- * @LastEditTime: 2019-07-31 22:24:09
+ * @LastEditTime: 2019-08-08 20:33:34
  * @LastEditor: zu1662
  * @Description: webpack【基础配置】，其他配置基于此配置
  */
@@ -35,9 +35,15 @@ module.exports = {
         }, {
           loader: 'postcss-loader' // JS 插件转换样式的工具，可以添加浏览器前缀，支持 CSS Variables 和 Mixins等其他的功能
         }, {
-          loader: 'sass-loader', // 将 Sass 编译成 CSS
+          loader: 'sass-loader' // 将 Sass 编译成 CSS
+        },
+        {
+          loader: 'sass-resources-loader',
           options: {
-            data: `@import "./src/styles/index.scss"; ` // 会把此段代码添加在sass文件的最前面
+            // 在每个scss文件前，引入文件
+            resources: [
+              path.resolve(__dirname, '../src/styles/index.scss')
+            ]
           }
         }]
       },

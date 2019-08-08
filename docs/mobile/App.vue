@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import '@/src/styles/index.scss'
+import '@/src/styles/base.scss'
 export default {
   name: 'App',
   components: {

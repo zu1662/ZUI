@@ -1,31 +1,32 @@
 // 颜色变量
-$primary-color:     #2d8cf0;
-$success-color:     #67C23A;
-$warning-color:     #E6A23C;
-$danger-color:      #F56C6C;
-$info-color:        #2db7f5;
+$primary-color:         #2d8cf0;
+$success-color:         #67C23A;
+$warning-color:         #E6A23C;
+$danger-color:          #F56C6C;
+$info-color:            #2db7f5;
 
-$title-color:       #17233d;
-$content-color:     #515a6e;
-$subsidiary-color:  #808695;
-$disabled-color:    #c5c8ce;
+$title-color:           #17233d;
+$content-color:         #515a6e;
+$subsidiary-color:      #808695;
+$disabled-color:        #c5c8ce;
 
-$border-color:      #dcdee2;
-$divider-color:     #e8eaec;
-$background-color:  #f8f8f9;
+$border-color:          #dcdee2;
+$divider-color:         #e8eaec;
+$background-color:      #f8f8f9;
+$doc-background-color:  #f0f3f6;
 
 // 基础变量
-$font-family:         'Helvetica Neue','PingFang SC',STHeitiSC-Light,Helvetica,"Microsoft YaHei","微软雅黑";
-$code-family:         -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Segoe UI Symbol;
-$font-size-base:      10px;
-$font-size-normal:    1.4rem;
-$font-size-small:     1.2rem;
-$font-size-large:     1.6rem;
+$font-family:             'Helvetica Neue','PingFang SC',STHeitiSC-Light,Helvetica,"Microsoft YaHei","微软雅黑";
+$code-family:             -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Segoe UI Symbol;
+$font-size-base:          10px;
+$font-size-normal:        1.4rem;
+$font-size-small:         1.2rem;
+$font-size-large:         1.6rem;
 
-// 阴影变量
-$shadow-color:      rgba(0, 0, 0, .2);
-$shadow-up:           0 -1px 6px $shadow-color;
-$shadow-down:         0 1px 6px $shadow-color;
-$shadow-left:         -1px 0 6px $shadow-color;
-$shadow-right:        1px 0 6px $shadow-color;
-$shadow-card:         0 1px 1px 0 rgba(0, 0, 0, .1);
+// 阴影变量   
+$shadow-color:          rgba(0, 0, 0, .2);
+$shadow-up:               0 -0.1rem 0.6rem $shadow-color;
+$shadow-down:             0 0.1rem 0.6rem $shadow-color;
+$shadow-left:             -0.1rem 0 0.6rem $shadow-color;
+$shadow-right:            0.1rem 0 0.6rem $shadow-color;
+$shadow-card:             0 0.1rem 0.6rem 0 rgba(0, 0, 0, .1);

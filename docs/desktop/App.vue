@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import '@/src/styles/index.scss'
+import '@/src/styles/base.scss'
 import '@/docs/assets/css/custom-md.scss'
 import '@/docs/assets/css/md-styles.scss'
 import 'highlight.js/styles/github.css'
@@ -45,7 +45,7 @@ export default {
       .zui-doc {
         padding: 30px 340px 30px 220px;
         flex: 1;
-        background-color: #f0f3f6;
+        background-color: $doc-background-color;
         overflow-y: scroll;
       }
       .zui-iframe-box {

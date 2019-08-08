@@ -1,14 +1,24 @@
+<!--
+ * @Author: zu1662
+ * @LastEditor: zu1662
+ * @Date: 2019-07-31 22:10:33
+ * @LastEditTime: 2019-08-08 23:05:48
+ * @Description:  图标示例
+ -->
 <template>
   <div class="icon-demo">
-    <div class="tab-title">123321</div>
+    <div class="tab-title">
+      <div class="tab-item" :class="{active: type === 'fill'}" @click="setToggle('fill')" ref="tabFill">填充</div>
+      <div class="tab-item" :class="{active: type === 'line'}" @click="setToggle('line')" ref="tabLine">线性</div>
+      <div class="line" ref="line"></div>
+    </div>
     <ul class="tab-body">
       <li
         class="list-item"
         v-for="(item, index) in iconList"
         :key="index"
-        v-if="item !== 'remixicon'"
       >
-        <Icon class="zuicon" :name="item" :size="32" type="fill"></Icon>
+        <Icon class="zuicon" :name="item" :size="30" :type="type"></Icon>
         <span>{{item}}</span>
       </li>
     </ul>
@@ -21,19 +31,67 @@ export default {
   name: 'IconDemo',
   data () {
     return {
-      iconList: iconList
+      iconList: iconList.sort((item1, item2) => { return item1 - item2 }),
+      type: 'fill'
     }
   },
   components: {
     Icon
+  },
+  mounted () {
+    this.setToggle(this.type)
+  },
+  methods: {
+    setToggle (type) {
+      this.type = type
+      const lineWidth = this.$refs.line.clientWidth
+      const tabFillWidth = this.$refs.tabFill.clientWidth
+      const tabLineWidth = this.$refs.tabLine.clientWidth
+      if (type === 'fill') {
+        this.$refs.line.style.transform = `translateX(${this.$refs.tabFill.offsetLeft + (tabFillWidth - lineWidth) / 2}px)`
+      } else {
+        this.$refs.line.style.transform = `translateX(${this.$refs.tabLine.offsetLeft + (tabLineWidth - lineWidth) / 2}px)`
+      }
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import url('/src/styles/common/var.scss');
+.tab-title {
+  position: relative;
+  display: flex;
+  background-color: $background-color;
+  div.tab-item {
+    flex: 1;
+    font-size: $font-size-large;
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+
+    &.active {
+      color: $info-color;
+    }
+  }
+
+  div.line {
+    position: absolute;
+    bottom: 0;
+    height: 0.3rem;
+    width: 20%;
+    background-color: $info-color;
+    transition: transform 0.3s ease-in;
+  }
+}
 .tab-body {
   display: flex;
   flex-wrap: wrap;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: $shadow-card;
+
   .list-item {
     padding: 1rem 0;
     display: flex;
@@ -42,12 +100,14 @@ export default {
     justify-content: center;
     width: 25%;
     .zuicon {
-      color: #333;
+      color: #666;
     }
     span {
       color: #999;
       font-size: 1.2rem;
-      line-height: 2rem;
+      font-size: 1.2rem;
+      line-height: 1;
+      margin: 1rem 0;
     }
   }
 }
