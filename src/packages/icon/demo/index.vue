@@ -3,9 +3,10 @@
     <div class="tab-title">
       <div class="tab-item" :class="{active: type === 'fill'}" @click="setToggle('fill')" ref="tabFill">填充</div>
       <div class="tab-item" :class="{active: type === 'line'}" @click="setToggle('line')" ref="tabLine">线性</div>
+      <div class="tab-item" :class="{active: type === 'other'}" @click="setToggle('other')" ref="tabOther">其他</div>
       <div class="line" ref="line"></div>
     </div>
-    <ul class="tab-body">
+    <ul class="tab-body" v-if="type !== 'other'">
       <li
         class="list-item"
         v-for="(item, index) in iconList"
@@ -13,6 +14,32 @@
       >
         <Icon class="zuicon" :name="item" :size="30" :type="type"></Icon>
         <span>{{item}}</span>
+      </li>
+    </ul>
+    <ul class="tab-body" v-else>
+      <li class="list-item" style="width: 100%;">
+        <Icon name="../../../../docs/assets/logo.png" :size="30"></Icon>
+        <span>图片icon</span>
+      </li>
+      <li class="list-item" style="width: 100%;">
+        <Icon name="../../../../docs/assets/logo.png" :size="30" info="10"></Icon>
+        <span>徽章默认</span>
+      </li>
+      <li class="list-item">
+        <Icon name="instagram" type="fill" :size="30" info="10" infoType="warning"></Icon>
+        <span>徽章warinig</span>
+      </li>
+      <li class="list-item">
+        <Icon name="github" type="fill" :size="30" info="999+" infoType="danger"></Icon>
+        <span>徽章danger</span>
+      </li>
+      <li class="list-item">
+        <Icon name="qq" :size="30" info="9" infoType="primary"></Icon>
+        <span>徽章primary</span>
+      </li>
+      <li class="list-item">
+        <Icon name="wechat" :size="30" info="1" infoType="success"></Icon>
+        <span>徽章success</span>
       </li>
     </ul>
   </div>
@@ -40,10 +67,13 @@ export default {
       const lineWidth = this.$refs.line.clientWidth
       const tabFillWidth = this.$refs.tabFill.clientWidth
       const tabLineWidth = this.$refs.tabLine.clientWidth
+      const tabOtherWidth = this.$refs.tabOther.clientWidth
       if (type === 'fill') {
         this.$refs.line.style.transform = `translateX(${this.$refs.tabFill.offsetLeft + (tabFillWidth - lineWidth) / 2}px)`
-      } else {
+      } else if (type === 'line') {
         this.$refs.line.style.transform = `translateX(${this.$refs.tabLine.offsetLeft + (tabLineWidth - lineWidth) / 2}px)`
+      } else {
+        this.$refs.line.style.transform = `translateX(${this.$refs.tabOther.offsetLeft + (tabOtherWidth - lineWidth) / 2}px)`
       }
     }
   }
