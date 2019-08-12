@@ -12,33 +12,33 @@
         v-for="(item, index) in iconList"
         :key="index"
       >
-        <Icon class="zuicon" :name="item" :size="30" :type="type"></Icon>
+        <zui-icon class="zuicon" :name="item" :size="30" :type="type"></zui-icon>
         <span>{{item}}</span>
       </li>
     </ul>
     <ul class="tab-body" v-else>
       <li class="list-item" style="width: 100%;">
-        <Icon name="../../../../docs/assets/logo.png" :size="30"></Icon>
+        <zui-icon name="../../../../docs/assets/logo.png" :size="30"></zui-icon>
         <span>图片icon</span>
       </li>
       <li class="list-item" style="width: 100%;">
-        <Icon name="../../../../docs/assets/logo.png" :size="30" info="10"></Icon>
+        <zui-icon name="../../../../docs/assets/logo.png" :size="30" info="10"></zui-icon>
         <span>徽章默认</span>
       </li>
       <li class="list-item">
-        <Icon name="instagram" type="fill" :size="30" info="10" infoType="warning"></Icon>
+        <zui-icon name="instagram" type="fill" :size="30" info="10" infoType="warning"></zui-icon>
         <span>徽章warinig</span>
       </li>
       <li class="list-item">
-        <Icon name="github" type="fill" :size="30" info="999+" infoType="danger"></Icon>
+        <zui-icon name="github" type="fill" :size="30" info="999+" infoType="danger"></zui-icon>
         <span>徽章danger</span>
       </li>
       <li class="list-item">
-        <Icon name="qq" :size="30" info="9" infoType="primary"></Icon>
+        <zui-icon name="qq" :size="30" info="9" infoType="primary"></zui-icon>
         <span>徽章primary</span>
       </li>
       <li class="list-item">
-        <Icon name="wechat" :size="30" info="1" infoType="success"></Icon>
+        <zui-icon name="wechat" :size="30" info="1" infoType="success"></zui-icon>
         <span>徽章success</span>
       </li>
     </ul>
@@ -46,7 +46,7 @@
 </template>
 <script>
 import iconList from '../icon-list'
-import Icon from '../icon'
+import ZuiIcon from '../icon'
 export default {
   name: 'IconDemo',
   data () {
@@ -56,7 +56,7 @@ export default {
     }
   },
   components: {
-    Icon
+    ZuiIcon
   },
   mounted () {
     this.setToggle(this.type)

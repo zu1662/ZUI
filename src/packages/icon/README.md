@@ -62,13 +62,13 @@ Vue.use(Icon)
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| name | 图标名称。当传入 图片链接 ，则以图片形式展示图标。 | `String` | - |
-| size | 图标大小，默认为 `20px` | `Number` | 20 |
-| type | 图标类型。支持样式：`fill`、`line` | `String` | line |
-| info | 图标徽章 | `String` | - |
-| infoType | 徽章背景样式。可用样式有：`primary`、`success`、`warning`、`danger` | `String` | - |
+| 参数 | 说明 | 类型 |可选值| 默认值 |
+|------|------|------|------|------|
+| name | 图标名称。当传入 图片链接 ，则以图片形式展示图标 | `String` | - | - |
+| size | 图标大小，默认为 `20px` | `Number` | - | 20 |
+| type | 图标类型 | `String`| `fill`、`line` | line |
+| info | 图标徽章 | `String` | - | - |
+| infoType | 徽章背景样式 | `String` | `primary`、`success`、`warning`、`danger` | - |
 
 ### Event
 

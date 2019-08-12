@@ -2,7 +2,7 @@
  * @Author: zu1662
  * @LastEditor: zu1662
  * @Date: 2019-07-31 22:10:20
- * @LastEditTime: 2019-08-12 22:21:40
+ * @LastEditTime: 2019-08-12 22:42:59
  * @Description:  图标组件
  -->
 <template>
@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'Icon',
+  name: 'ZuiIcon',
   props: {
     name: {
       type: String,
