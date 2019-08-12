@@ -2,7 +2,7 @@
  * @Author: zu1662
  * @LastEditor: zu1662
  * @Date: 2019-07-31 22:10:20
- * @LastEditTime: 2019-08-12 22:42:59
+ * @LastEditTime: 2019-08-12 22:57:50
  * @Description:  图标组件
  -->
 <template>
@@ -64,6 +64,7 @@ export default {
 
 .zuicon {
   position: relative;
+  user-select: none;
 
   img {
     width: 100%;

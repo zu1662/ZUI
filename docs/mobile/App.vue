@@ -14,12 +14,14 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 /*修改滚动条样式*/
-  div::-webkit-scrollbar{
-    width:0;
-    height:0;
-  }
+*::-webkit-scrollbar{
+  width:0;
+  height:0;
+}
+</style>
+<style lang="scss" scoped>
 .demo-app {
   height: 100%;
   overflow-y: scroll;

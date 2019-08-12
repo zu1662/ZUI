@@ -16,7 +16,7 @@
         <span>{{item}}</span>
       </li>
     </ul>
-    <ul class="tab-body" v-else>
+    <ul class="tab-body" style="height: auto;" v-else>
       <li class="list-item" style="width: 100%;">
         <zui-icon name="../../../../docs/assets/logo.png" :size="30"></zui-icon>
         <span>图片icon</span>
@@ -81,6 +81,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import url('/src/styles/common/var.scss');
+.icon-demo {
+  height: 100%;
+}
+
 .tab-title {
   position: relative;
   display: flex;
@@ -111,6 +115,8 @@ export default {
   flex-wrap: wrap;
   margin: 1rem;
   padding: 0.5rem;
+  height: calc(100% - 5rem);
+  overflow-y: scroll;
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: $shadow-card;
