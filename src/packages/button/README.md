@@ -3,7 +3,7 @@
 ### 引入
 
 ``` javascript
-import { Button } from 'vant';
+import { Button } from 'zui';
 
 Vue.use(Button);
 ```
@@ -12,32 +12,23 @@ Vue.use(Button);
 
 ### 按钮类型
 
-支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`
+支持`default`、`primary`、`success`、`warning`、`danger`五种类型，默认为`default`
 
 ```html
-<van-button type="default">默认按钮</van-button>
-<van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
-<van-button type="warning">警告按钮</van-button>
-<van-button type="danger">危险按钮</van-button>
+<zui-button type="default">默认按钮</zui-button>
+<zui-button type="primary">主要按钮</zui-button>
+<zui-button type="success">成功按钮</zui-button>
+<zui-button type="warning">警告按钮</zui-button>
+<zui-button type="danger">危险按钮</zui-button>
 ```
 
-### 朴素按钮
+### 镂空按钮
 
-通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
-
-```html
-<van-button plain type="primary">朴素按钮</van-button>
-<van-button plain type="danger">朴素按钮</van-button>
-```
-
-### 细边框
-
-设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
+通过`hollow`属性将按钮设置为镂空按钮，镂空按钮的文字为按钮颜色，背景为白色。
 
 ```html
-<van-button plain hairline type="primary">细边框按钮</van-button>
-<van-button plain hairline type="danger">细边框按钮</van-button>
+<zui-button hollow type="primary">镂空按钮</zui-button>
+<zui-button hollow type="danger">镂空按钮</zui-button>
 ```
 
 ### 禁用状态
@@ -45,79 +36,57 @@ Vue.use(Button);
 通过`disabled`属性来禁用按钮，禁用状态下按钮不可点击
 
 ```html
-<van-button disabled type="primary">禁用状态</van-button>
-<van-button disabled type="danger">禁用状态</van-button>
-```
-
-### 加载状态
-
-通过`loading`属性设置按钮为加载状态，加载状态下默认会隐藏按钮文字，可以通过`loading-text`设置加载状态下的文字
-
-```html 
-<van-button loading type="primary" />
-<van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="danger" loading-text="加载中..." />
-```
-
-### 按钮形状
-
-通过`square`设置方形按钮，通过`round`设置圆形按钮
-
-```html 
-<van-button square type="primary">方形按钮</van-button>
-<van-button round type="danger">圆形按钮</van-button>
+<zui-button disabled type="primary">禁用状态</zui-button>
+<zui-button disabled type="danger">禁用状态</zui-button>
 ```
 
 ### 图标按钮
 
-通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL
+通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL。
+可以只传入要设置的 `图标名称`，此时图标属性为默认；也可以以对象的状态传入，设置 `icon` 的各种属性。
 
-```html 
-<van-button icon="star-o" type="primary" />
-<van-button icon="star-o" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+```html
+<zui-button icon="search" type="primary" />
+<zui-button icon="loader" hollow type="success">按钮</zui-button>
+<zui-button icon="https://cn.vuejs.org/images/logo.png" hollow type="danger">按钮</zui-button>
+<zui-button :icon="{name: 'information', size: 20, type: 'fill'}" hollow type="success">按钮</zui-button>
 ```
 
-### 按钮尺寸
+### 按钮形状
 
-支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
+通过`round`设置圆角按钮，通过`circle`设置圆形按钮
 
-```html 
-<van-button type="primary" size="large">大号按钮</van-button>
-<van-button type="primary" size="normal">普通按钮</van-button>
-<van-button type="primary" size="small">小型按钮</van-button>
-<van-button type="primary" size="mini">迷你按钮</van-button>
+```html
+<zui-button round type="primary">圆角按钮</zui-button>
+<zui-button circle icon="loader" hollow type="success"></zui-button>
+```
+
+### 流体按钮
+
+通过 `fluit` 设置按钮宽度自适应
+
+```html
+<zui-button fluit type="primary">流体按钮</zui-button>
+<zui-button fluit hollow type="primary">流体按钮</zui-button>
 ```
 
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| 参数 | 说明 | 类型 |可选值| 默认值 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` | 1.6.6 |
-| size | 尺寸，可选值为 `large` `small` `mini` | `String` | `normal` | - |
-| text | 按钮文字 | `String` | - | - |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.0 |
-| tag | HTML 标签 | `String` | `button` | - |
-| native-type | 原生 button 标签 type 属性 | `String` | - | - |
-| block | 是否为块级元素 | `Boolean` | `false` | - |
-| plain | 是否为朴素按钮 | `Boolean` | `false` | - |
-| square | 是否为方形按钮 | `Boolean` | `false` | - |
-| round | 是否为圆形按钮 | `Boolean` | `false` | - |
-| disabled | 是否禁用按钮 | `Boolean` | `false` | - |
-| hairline | 是否使用 0.5px 边框 | `Boolean` | `false` | 1.6.11 |
-| loading | 是否显示为加载状态 | `Boolean` | `false` | - |
-| loading-text | 加载状态提示文字 | `String` | - | 1.6.3 |
-| loading-type | 加载图标类型，可选值为`spinner` | `String` | `circular` | 2.0.0 |
-| loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
-| url | 跳转链接 | `String` | - | 1.6.5 |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | 1.6.5 |
-| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 1.6.5 |
+| type | 按钮类型 | `String` | `defalut`、`primary`、`success`、`warning`、`danger` | `default` |
+| hollow | 是否为镂空按钮 | `Boolean` | - | `false` |
+| round | 是否为圆角按钮 | `Boolean` | - | `false` |
+| circle | 是否为圆形按钮 | `Boolean` | - | `false` |
+| disabled | 是否为禁用按钮 | `Boolean` | - | `false` |
+| fluit | 是否为流体按钮 | `Boolean` | - | `false` |
+| icon | 设置图标显示，支持所有icon图标。可以只传入 `图标名称`；也可以传入 `图标的属性对象` | `String`、`Object` | - | - |
+| native-type | 原生 type 属性 | `String` | `button`、`submit`、`reset` | `button` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: Event |
-| touchstart | 开始触摸按钮时触发 | event: TouchEvent |
+| click | 点击按钮，且按钮状态不为禁用时触发 | event: Event |

@@ -2,7 +2,7 @@
  * @Author: zu1662
  * @LastEditor: zu1662
  * @Date: 2019-07-31 22:10:20
- * @LastEditTime: 2019-08-12 22:57:50
+ * @LastEditTime: 2019-08-13 22:40:47
  * @Description:  图标组件
  -->
 <template>
@@ -62,10 +62,27 @@ export default {
 @import './fonts/icon-line.scss';
 @import './fonts/icon-fill.scss';
 
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 .zuicon {
   position: relative;
   user-select: none;
 
+  &.icon-loader-fill,
+  &.icon-loader-line,
+  &.icon-loader1-fill,
+  &.icon-loader1-line,
+  &.icon-loader2-fill,
+  &.icon-loader2-line {
+    animation: rotating 2s linear infinite;
+  }
   img {
     width: 100%;
   }
